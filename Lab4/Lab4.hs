@@ -53,3 +53,13 @@ and = \xs -> case xs of { [] -> True; z:zs -> z && and (zs)}
 
 or::[Bool]-> Bool
 or = \xs -> case xs of { [] -> False; z:zs -> z || or (zs)}
+
+cuantos::(a->Bool) ->[a]-> N
+cuantos = \f xs -> case xs of { [] -> O ; z:zs -> case f z of {True -> S (cuantos f zs) ; False -> cuantos f zs }}
+
+any::(a->Bool) ->[a]->Bool
+any = \f xs -> case xs of { [] -> False ; z:zs -> case f z of {True -> True ; False -> any f zs }}
+
+all::(a->Bool) ->[a]->Bool
+all = \f xs -> case xs of { [] -> True ; z:zs -> case f z of {True -> all f zs ; False -> False }}
+
