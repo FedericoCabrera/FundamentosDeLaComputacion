@@ -1,0 +1,15 @@
+class Enum a where
+fromEnum :: a->Int (orden del constructor)
+toEnum :: Int -> a (hay que castearlo)
+
+Cast 
+
+fromEnum True => 1
+
+toEnum 1 :: Bool
+True
+
+toEnum 126 :: Char
+'...'
+
+['a' .. 'z'] (me da todos los caracteres entre los dos valores)
